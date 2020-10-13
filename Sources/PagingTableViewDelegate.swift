@@ -6,11 +6,10 @@
 //  Copyright © 2017년 InJung Chung. All rights reserved.
 //
 
-import UIKit
-
-@objc public protocol PagingTableViewDelegate {
-
-  @objc optional func didPaginate(_ tableView: PagingTableView, to page: Int)
-  func paginate(_ tableView: PagingTableView, to page: Int)
-
+public protocol PagingTableViewDelegate:AnyObject {
+    func didPaginate(_ tableView: PagingTableView, to page: Int)
+    func paginate(_ tableView: PagingTableView, to page: Int)
+}
+extension PagingTableViewDelegate {
+    func didPaginate(_ tableView: PagingTableView, to page: Int) { }
 }
